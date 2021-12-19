@@ -9,16 +9,6 @@ export default function App() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const incrementGood = () => {
-    setGood(prevState => prevState + 1);
-  };
-  const incrementNeutral = () => {
-    setNeutral(prevState => prevState + 1);
-  };
-  const incrementBad = () => {
-    setBad(prevState => prevState + 1);
-  };
-
   const total = good + neutral + bad;
 
   const positivePercentage = () => {
@@ -29,9 +19,9 @@ export default function App() {
     <div className="App">
       <Section title="Please leave feedback">
         <FeedbackOptions
-          incrementGood={incrementGood}
-          incrementNeutral={incrementNeutral}
-          incrementBad={incrementBad}
+          setGood={setGood}
+          setNeutral={setNeutral}
+          setBad={setBad}
         />
       </Section>
       <Section title="Statistics">
